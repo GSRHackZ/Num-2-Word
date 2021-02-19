@@ -18,6 +18,7 @@ Convert whole numbers to words, all the way up to GooglePlex 😲
 <li>The first one is <b>numberOfThings()</b>. It helps you check the amount of a certain value in a string. It requires 2 inputs, the string and the value you want the amount of. 〽</li><br>
 <li>The second one helps you find multiple indexes of a certain value in an array. It requires one input which is that certain value in whatever array you connect to it. 📃</li><br>
   <li>This can convert numbers to writing from <b>0</b> all the way to <b>GooglePlex!! 😲</b></li><br>
+  <li>This resembles the human learning process. I gave it small amounts of knowledge and when it reaches a complex number it splits it up into smaller numbers, analyzes them and then returns a result. 🧠 </li><br>
 <li>This took a long time to make. Please leave a star 😭</li><br>
 </ul>
 
