@@ -11,7 +11,7 @@ Convert whole numbers to words, all the way up to GooglePlex 😲
 </ol>
 
 
-<h3>Features</h3>
+<h3>Keypoints:</h3>
 <ul style="margin-bottom:10px;">
   <li><b>num2word()</b> only accepts string values, so convert your number into a string for it to work. 📝</li><br>
 <li>There are two other functions that you can use from this code. ✌</li><br>
