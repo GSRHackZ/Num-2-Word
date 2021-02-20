@@ -2,7 +2,7 @@
 
 const ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 const tens = ["ten", "teen", "ty"];
-const tensPlus = ["", "", "hundred", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "hextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion", "quindecillion", "hexdecillion", "septendecillion", "octodecillion", "novemdecillion", "vigintillion", "unvigintillion", "duovigintillion", "trevigintillion", "quattourvigintillion", "quinvigintillion", "hexvigintillion", "septenvigintillion", "octovigintillion", "novemvigintillion", "trigintillion", "untrigintillion", "duotrigintillion", "Googol", "Googolplex"]
+const tensPlus = ["", "", "hundred", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "hextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion", "quindecillion", "hexdecillion", "septendecillion", "octodecillion", "novemdecillion", "vigintillion", "unvigintillion", "duovigintillion", "trevigintillion", "quattourvigintillion", "quinvigintillion", "hexvigintillion", "septenvigintillion", "octovigintillion", "novemvigintillion", "trigintillion", "untrigintillion", "duotrigintillion"]
 const exception = [['twen', 'thir', "", 'fif', "", "", "eigh"], ["two", "three", "five", "eight"], ["one", "two", "three", "five", "eight"], ["eleven", "twelve", "thirteen", "", "fifteen", "", "", "eighteen"]]
 
 
@@ -23,9 +23,9 @@ Array.prototype.multiIndexOf = function (el) {
 };
 
 function num2word(n) {
-    let num = n;
+    let num = n.trim();
     if (n.includes(".")) {
-        num = n.split(".")[0];
+        num = n.split(".")[0].trim();
     }
     let zeros = numberOfThings(num, "0");
     if (num.includes(",")) {
