@@ -1,10 +1,10 @@
-
 //Hello, this took a long time to make please leave a star 😭
 
 const ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 const tens = ["ten", "teen", "ty"];
-const tensPlus = ["", "", "hundred", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "hextillion","septillion","octillion","nonillion","decillion","undecillion","duodecillion","tredecillion","quattuordecillion","quindecillion","hexdecillion","septendecillion","octodecillion","novemdecillion","vigintillion","unvigintillion","duovigintillion","trevigintillion","quattourvigintillion","quinvigintillion","hexvigintillion","septenvigintillion","octovigintillion","novemvigintillion","trigintillion","untrigintillion","duotrigintillion","Googol","Googolplex"]
+const tensPlus = ["", "", "hundred", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "hextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion", "quindecillion", "hexdecillion", "septendecillion", "octodecillion", "novemdecillion", "vigintillion", "unvigintillion", "duovigintillion", "trevigintillion", "quattourvigintillion", "quinvigintillion", "hexvigintillion", "septenvigintillion", "octovigintillion", "novemvigintillion", "trigintillion", "untrigintillion", "duotrigintillion", "Googol", "Googolplex"]
 const exception = [['twen', 'thir', "", 'fif', "", "", "eigh"], ["two", "three", "five", "eight"], ["one", "two", "three", "five", "eight"], ["eleven", "twelve", "thirteen", "", "fifteen", "", "", "eighteen"]]
+
 
 
 function numberOfThings(n, thing) {
@@ -29,21 +29,38 @@ function num2word(n) {
     }
     let zeros = numberOfThings(num, "0");
     if (num.includes(",")) {
+        let end;
         let place = numberOfThings(num, ",");
-        let splitNum=num.split(",")
-        let rest=num2word(splitNum.pop());
-        let arr=[];
-        let c=place+3;
-        for(let i=0;i<splitNum.length;i++){
+        let splitNum = num.split(",")
+        let rest = num2word(splitNum.pop());
+        if (rest !== "") {
+            end = " and " + rest;
+        }
+        else {
+            end = rest;
+        }
+        let arr = [];
+        let c = place + 3;
+        for (let i = 0; i < splitNum.length; i++) {
             c--;
-            arr.push(num2word(splitNum[i])+" "+tensPlus[c]);
-            if(splitNum.length-1===i){
-                return arr.join(" ")+" and "+rest;
+            if (splitNum[i] !== "000") {
+                if(c<tensPlus.length){
+                    arr.push(num2word(splitNum[i]) + " " + tensPlus[c]);
+                }
+                else{
+                    return "Too Much 🤦‍♂️";
+                }
+            }
+            if (splitNum.length - 1 === i) {
+                return arr.join(" ") + end;
             }
         }
     }
     else {
         if (num.length == 3) {
+            if (zeros == 3) {
+                return "";
+            }
             if (zeros == 2) {
                 if (num.split("").multiIndexOf("0").includes(0) && num.split("").multiIndexOf("0").includes(1) == false) {
                     let rest = num2word(new Array(num.split("")[1], num.split("")[2]).join(""));
@@ -95,7 +112,7 @@ function num2word(n) {
                         return exception[0][actual] + tens[num.length];
                     }
                 }
-                else{
+                else {
                     return num2word(num.split("")[1]);
                 }
             }
