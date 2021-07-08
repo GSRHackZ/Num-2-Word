@@ -20,7 +20,6 @@ Convert whole numbers to words, all the way up to Google 😲
   <li>This can convert numbers to writing from <b>0</b> all the way to <b>Google!! 😲</b> ( ten-duotrigintillion )</li><br>
   <li>This resembles the human learning process. I gave it small amounts of knowledge and when it reaches a complex number it splits it up into smaller numbers, analyzes them and then returns a result. 🧠 </li><br>
   <li>Here's a repo made using this: <a href="https://github.com/GSRHackZ/Number-2-Writing">Number-2-Writing</a> repo.</li><br>
-<li>This took a long time to make. Please leave a star 😭</li><br>
 </ul>
 
 <h3>Please consider:</h3>
